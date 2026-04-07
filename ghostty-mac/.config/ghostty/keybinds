@@ -1,0 +1,2 @@
+# Mac — Ghostty cmd+ shortcuts are built-in defaults, only add custom ones
+keybind = global:cmd+shift+t=toggle_quick_terminal

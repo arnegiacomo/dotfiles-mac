@@ -1,1 +1,4 @@
 theme = TokyoNight
+
+# Platform-specific keybinds (stowed per OS)
+config-file = ~/.config/ghostty/keybinds
