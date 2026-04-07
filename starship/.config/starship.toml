@@ -24,8 +24,7 @@ style = "green"
 style = "red"
 
 [kubernetes]
-disabled = false
-style = "cyan"
+disabled = true
 
 [java]
 style = "red"
