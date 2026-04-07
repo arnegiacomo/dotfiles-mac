@@ -114,7 +114,7 @@ PROMPT+='%F{cyan}$(git_prompt)' # Git branch and uncommitted files in cyan
 PROMPT+='$(kube_ps1)' # Kubernetes context (toggle with kubeon/kubeoff)
 PROMPT+=$'\n' # Newline before input
 PROMPT+='%F{green}%#%f ' # '#' for root, '$' for regular user
-kubeoff # Start with kube context hidden by default
+kubeoff # Toggle with: kubeon / kubeoff
 # Add conda environment to prompt
 if [ ! -z "$CONDA_DEFAULT_ENV" ]
 then
