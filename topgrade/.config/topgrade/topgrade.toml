@@ -5,8 +5,6 @@ cleanup = true
 [firmware]
 upgrade = false
 
-[docker]
-enable_cleanup = false
 
 [git]
 repos = ["~/dotfiles"]
