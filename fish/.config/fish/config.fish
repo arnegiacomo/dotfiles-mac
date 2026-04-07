@@ -44,6 +44,20 @@ abbr --add gfr 'git fetch; and git rebase'
 abbr --add gfrm 'git fetch origin; and git rebase origin/(git symbolic-ref --short refs/remotes/origin/HEAD | string replace "origin/" "")'
 abbr --add gcm 'git checkout (git symbolic-ref --short refs/remotes/origin/HEAD | string replace "origin/" "")'
 
+# Abbreviation reminder — fires before each command
+function fish_preexec --on-event fish_preexec
+    set -l typed (string trim $argv[1])
+    abbr --show | while read -l line
+        set -l parts (string match -r "^abbr -a -- (\S+) '(.*)'\$" $line)
+        set -q parts[3] || continue
+        set -l name $parts[2]
+        set -l expansion $parts[3]
+        if string match -q -- "$expansion*" "$typed"
+            echo "Tip: '$name' → $expansion"
+        end
+    end
+end
+
 # Direnv
 direnv hook fish | source
 
