@@ -1,7 +1,5 @@
 #zmodload zsh/zprof
 fpath=(/Users/arnemunthe-kaas/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
 
 export PATH=/opt/homebrew/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin # Set homebrew before system paths
 
@@ -40,18 +38,20 @@ alias ks='kubeshark tap; kubeshark clean'
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 alias httpybench='python3 /Users/arnemunthe-kaas/programming/side_projects/HttPyBench/httpybench.py'
 alias chrome='open -a "Google Chrome"'
-alias q='quarkus'
 
 source "$HOME/.cargo/env"
 alias c='cargo'
-alias q='quarkus'
 alias j='jerry'
 alias jbm='jerry -r -e bmtest'
 alias jdd='jerry -r -e ddbeta'
 alias jp='jerry proxy -f'
-alias ls='eza'
+alias ls='eza --icons --color=always'
+alias ll='eza --icons --color=always -la'
+alias lt='eza --icons --color=always --tree --level=2'
 alias b='brew'
 alias v='nvim'
+alias lg='lazygit'
+alias ld='lazydocker'
 
 alias g='git'
 alias gc="git checkout"
@@ -94,34 +94,28 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 zinit light jonmosco/kube-ps1
+zinit light zsh-users/zsh-completions
+autoload -Uz compinit && compinit
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-history-substring-search
+zinit light Aloxaf/fzf-tab
+zinit light MichaelAquilina/zsh-you-should-use
 
-# Define a function to check for a Git repo and count uncommitted files
-git_prompt() {
-    if [ -d .git ]; then
-        local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-        local uncommitted=$(git status --short 2>/dev/null | wc -l)
-        if [ -n "$branch" ]; then
-            echo -n "%F{green}$branch"
-            if [ $uncommitted -gt 0 ]; then
-                echo -n " +%F{red}$uncommitted"
-            fi
-            echo -n "%f "
-        fi
-    fi
-}
+# History config
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
 
-# Set the PS1 variable to customize your prompt
-PROMPT='%F{yellow}%B%~%b%f ' # Current directory in bold yellow
-PROMPT+='%F{cyan}$(git_prompt)' # Git branch and uncommitted files in cyan
-PROMPT+='$(kube_ps1)' # Kubernetes context (toggle with kubeon/kubeoff)
-PROMPT+=$'\n' # Newline before input
-PROMPT+='%F{green}%#%f ' # '#' for root, '$' for regular user
-kubeoff # Toggle with: kubeon / kubeoff
-# Add conda environment to prompt
-if [ ! -z "$CONDA_DEFAULT_ENV" ]
-then
-    PROMPT+="($CONDA_DEFAULT_ENV) "
-fi
+# Bind up/down arrows to history substring search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# Starship prompt (replaces custom PROMPT)
+eval "$(starship init zsh)"
 
 # Export maven home
 export PATH=/opt/homebrew/opt/maven/bin:$PATH
