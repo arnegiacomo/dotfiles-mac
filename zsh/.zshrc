@@ -25,6 +25,8 @@ alias java8='set_java_version "$JAVA_8_HOME"'
 export JAVA_HOME="$JAVA_21_HOME"
 export PATH="$JAVA_HOME/bin:$PATH"
 
+export PATH="$HOME/go/bin:$PATH"
+
 export HOMEBREW_AUTO_UPDATE_SECS=86400
 
 alias python=python3
