@@ -5,8 +5,11 @@ cleanup = true
 [firmware]
 upgrade = false
 
+[docker]
+enable_cleanup = false
+
 [git]
-pull_repos = ["~/dotfiles"]
+repos = ["~/dotfiles"]
 
 [commands]
 "Manual binaries (lazygit, lazydocker, nvim)" = "bash ~/dotfiles/scripts/update-bins.sh"
