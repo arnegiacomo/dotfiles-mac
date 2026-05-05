@@ -1,5 +1,5 @@
 #zmodload zsh/zprof
-fpath=(/Users/arnemunthe-kaas/.docker/completions $fpath)
+fpath=($HOME/.docker/completions $fpath)
 
 export PATH=/opt/homebrew/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin # Set homebrew before system paths
 
@@ -38,7 +38,7 @@ alias ks='kubeshark tap; kubeshark clean'
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 alias chrome='open -a "Google Chrome"'
 
-source "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 alias c='cargo'
 alias jbm='jerry -r -e bmtest'
 alias jdd='jerry -r -e ddbeta'
@@ -60,7 +60,7 @@ alias gfrm='git fetch origin && git rebase origin/$(git symbolic-ref --short ref
 alias gcm='git checkout $(git symbolic-ref --short refs/remotes/origin/HEAD | sed "s|^origin/||")'
 
 # Created by `pipx` on 2023-09-27 17:50:46
-export PATH="$PATH:/Users/arnemunthe-kaas/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -143,7 +143,7 @@ alias firefox='open -a "Firefox"'
 #  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 #  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 export NVM_LAZY_LOAD=true
-source ~/.zsh-nvm/zsh-nvm.plugin.zsh
+[ -f ~/.zsh-nvm/zsh-nvm.plugin.zsh ] && source ~/.zsh-nvm/zsh-nvm.plugin.zsh
 
 fastfetch
 
