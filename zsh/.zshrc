@@ -9,11 +9,13 @@ function set_java_version() {
   java -version
 }
 
+export JAVA_25_HOME="$(/usr/libexec/java_home -v 25)"
 export JAVA_21_HOME="$(/usr/libexec/java_home -v 21)"
 export JAVA_17_HOME="$(/usr/libexec/java_home -v 17)"
 export JAVA_11_HOME="$(/usr/libexec/java_home -v 11)"
 export JAVA_8_HOME="$(/usr/libexec/java_home -v 1.8)"
 
+alias java25='set_java_version "$JAVA_25_HOME"'
 alias java21='set_java_version "$JAVA_21_HOME"'
 alias java17='set_java_version "$JAVA_17_HOME"'
 alias java11='set_java_version "$JAVA_11_HOME"'
