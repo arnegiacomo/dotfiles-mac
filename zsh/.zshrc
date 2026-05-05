@@ -41,7 +41,6 @@ alias chrome='open -a "Google Chrome"'
 
 source "$HOME/.cargo/env"
 alias c='cargo'
-alias j='jerry'
 alias jbm='jerry -r -e bmtest'
 alias jdd='jerry -r -e ddbeta'
 alias jp='jerry proxy -f'
@@ -52,7 +51,6 @@ alias v='nvim'
 alias lg='lazygit'
 alias ld='lazydocker'
 
-alias g='git'
 alias gc="git checkout"
 alias gs="git stash"
 alias gpl="git pull"
