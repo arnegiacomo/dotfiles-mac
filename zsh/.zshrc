@@ -36,7 +36,6 @@ alias ns='kubens'
 alias kxns='kubectx; kubens'
 alias ks='kubeshark tap; kubeshark clean'
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-alias httpybench='python3 /Users/arnemunthe-kaas/programming/side_projects/HttPyBench/httpybench.py'
 alias chrome='open -a "Google Chrome"'
 
 source "$HOME/.cargo/env"
@@ -59,10 +58,6 @@ alias gb="git branch"
 alias gfr="git fetch; git rebase;"
 alias gfrm='git fetch origin && git rebase origin/$(git symbolic-ref --short refs/remotes/origin/HEAD | sed "s|^origin/||")'
 alias gcm='git checkout $(git symbolic-ref --short refs/remotes/origin/HEAD | sed "s|^origin/||")'
-
-alias helmfile0='/Users/arnemunthe-kaas/work/utils/helmfile_0.170.1/helmfile'
-
-alias gda="/bin/bash /Users/arnemunthe-kaas/scripts/deletebranches.sh"
 
 # Created by `pipx` on 2023-09-27 17:50:46
 export PATH="$PATH:/Users/arnemunthe-kaas/.local/bin"
