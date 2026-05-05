@@ -43,7 +43,6 @@ alias chrome='open -a "Google Chrome"'
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 alias c='cargo'
 alias jbm='jerry -r -e bmtest'
-alias jdd='jerry -r -e ddbeta'
 alias jp='jerry proxy -f'
 alias ls='eza --icons --color=always'
 alias ll='eza --icons --color=always -la'
