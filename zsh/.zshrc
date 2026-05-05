@@ -119,7 +119,6 @@ export PATH=/opt/homebrew/opt/maven/bin:$PATH
 
 
 eval "$(direnv hook zsh)"
-eval "$(zoxide init --cmd cd zsh)"
 
 movtogif() {
     input_file=$1
@@ -165,3 +164,6 @@ pyenv() {
   eval "$(command pyenv init -)"
   pyenv "$@"
 }
+
+# zoxide must be initialized last (per its doctor check)
+eval "$(zoxide init --cmd cd zsh)"
