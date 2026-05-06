@@ -113,6 +113,9 @@ eval "$(starship init zsh)"
 # Export maven home
 export PATH=/opt/homebrew/opt/maven/bin:$PATH
 
+# IntelliJ IDEA CLI launcher (`idea`)
+export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
+
 
 eval "$(direnv hook zsh)"
 
