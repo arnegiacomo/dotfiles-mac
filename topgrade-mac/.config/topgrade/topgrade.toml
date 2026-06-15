@@ -1,0 +1,10 @@
+[misc]
+assume_yes = false
+cleanup = true
+
+[firmware]
+upgrade = false
+
+
+[git]
+repos = ["~/dotfiles"]

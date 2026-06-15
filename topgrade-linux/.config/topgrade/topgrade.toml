@@ -1,0 +1,13 @@
+[misc]
+assume_yes = false
+cleanup = true
+
+[firmware]
+upgrade = false
+
+
+[git]
+repos = ["~/dotfiles"]
+
+[commands]
+"Manual binaries (lazygit, lazydocker, nvim)" = "bash ~/dotfiles/scripts/update-bins.sh"
