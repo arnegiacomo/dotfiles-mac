@@ -1,12 +1,19 @@
+[user]
+	name = Arne Munthe-Kaas
+	email = arnegiacomo@gmail.com
+	signingkey = ~/.ssh/id_ed25519.pub
+
 [gpg]
 	format = ssh
+
 [gpg "ssh"]
 	allowedSignersFile = ~/.config/git/allowed_signers
-[user]
-	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDaS8qOS2/2Z6AlwZy586XJ64YcQJqCIp/jaDaT6QCc+m2/MemU0omAFSfq/UgxpJeBZThjdmSLyvGF5QbUutO2mBCmQTtAvlyXPMzW5uI48v2RVqzGU9muDkLWBlAMEZkfM5siAcvhmO/w4eg5JlKAwP5+WUtMmoPRMaNT6Zz71JI5xKIoqDjZ2jV+1PAGT52LFfyjAcpjqcEjy7jrmyTKaB02mFQLkNT91ZsqZCl3OeRTuDdgkcXcUwMmP3hcl8I5FN6ksE6sTqQIPHeEeh5BM1N9Shc673PnE1eYYQX+WaiCVSpnZLnaJLO9WXd+ImYyfUmz/kRILhpRQnHgwEr/anzK589bZj1rN6eg5TCpTnTIyeB9C/thnqFNpaVFuAQjklb4TH0oQkK+4+NAKW0mNy/QyEL9gY9ZokC0UdjWdPXe26+2YaqA7U28iE7mkEkHvuyPr21H3wkE8jGFzOWLpnDJ5eOSvuuuJwvcQYzlC6sXumoElrmE4q/VIz9rhkE=
-	email = arnem@stacc.com
-	name = Arne Munthe-Kaas
+
 [commit]
 	gpgsign = true
+
+[tag]
+	gpgsign = true
+
 [include]
 	path = ~/.gitconfig.local
