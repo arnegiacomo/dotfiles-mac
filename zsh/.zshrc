@@ -55,7 +55,14 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 zinit light zsh-users/zsh-completions
-autoload -Uz compinit && compinit
+# Full compinit (security audit + freshness rebuild) at most once per 24h;
+# fast -C path otherwise. Force a refresh with: rm -f ~/.zcompdump*; compinit
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-history-substring-search
