@@ -22,6 +22,7 @@ alias gc="git checkout"
 alias gs="git stash"
 alias gpl="git pull"
 alias gpo="git push origin"
+alias gpu="git push -u origin HEAD"
 alias gb="git branch"
 alias gfr="git fetch; git rebase;"
 alias gfrm='git fetch origin && git rebase origin/$(git symbolic-ref --short refs/remotes/origin/HEAD | sed "s|^origin/||")'
