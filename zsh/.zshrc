@@ -91,6 +91,9 @@ pyenv() {
   pyenv "$@"
 }
 
+# Fugleramme frame over the USB-C gadget link (always 10.12.194.1); key check off since it's point-to-point
+alias pissh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no admin@10.12.194.1'
+
 # Starship prompt
 eval "$(starship init zsh)"
 
