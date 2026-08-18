@@ -10,6 +10,7 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 | `nvim`  | Neovim config (based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)) with LSP for Java, TypeScript/JavaScript |
 | `git`   | Global gitignore |
 | `gh`    | GitHub CLI config |
+| `claude` | Global `CLAUDE.md` for Claude Code |
 
 ## Setup
 
@@ -34,7 +35,7 @@ sudo apt install stow
 
 ```bash
 # Install all
-stow zsh nvim git gh
+stow zsh nvim git gh claude
 
 # Or pick individual packages
 stow nvim
