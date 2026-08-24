@@ -74,6 +74,10 @@ zinit light MichaelAquilina/zsh-you-should-use
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
+# fzf shell integration: Ctrl+T files, Ctrl+R history, Alt+C cd
+# (also replaces the default Ctrl+T transpose-chars binding)
+source <(fzf --zsh)
+
 # Direnv
 eval "$(direnv hook zsh)"
 
