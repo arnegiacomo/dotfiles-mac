@@ -28,6 +28,22 @@ alias gfr="git fetch; git rebase;"
 alias gfrm='git fetch origin && git rebase origin/$(git symbolic-ref --short refs/remotes/origin/HEAD | sed "s|^origin/||")'
 alias gcm='git checkout $(git symbolic-ref --short refs/remotes/origin/HEAD | sed "s|^origin/||")'
 
+# Throwaway worktree: detached at HEAD (or a given ref) in a temp dir, no branch
+# builtin cd keeps the temp dirs out of zoxide's history
+gwt() {
+  git rev-parse --git-dir >/dev/null || return
+  local dir=$(mktemp -d -t gwt) || return
+  git worktree add --detach "$dir" "${1:-HEAD}" && builtin cd "$dir"
+}
+
+# Discard the gwt worktree you're in and go back to the main checkout
+gwtd() {
+  local wt=$(git rev-parse --show-toplevel) || return
+  [[ $wt == */gwt.* ]] || { echo "gwtd: not in a gwt worktree" >&2; return 1; }
+  local main=$(git worktree list --porcelain | sed -n "1s/^worktree //p")
+  builtin cd "$main" && git worktree remove --force "$wt"
+}
+
 # History
 HISTSIZE=10000
 SAVEHIST=10000
