@@ -22,14 +22,20 @@ Personal macOS dotfiles managed with [GNU Stow](https://www.gnu.org/software/sto
 
 ## Setup
 
+On a fresh Mac, paste this into Terminal. The repo is private, so the first steps log in to GitHub before cloning.
+
 ```bash
-# Clone to ~/dotfiles: topgrade's config expects that path
-git clone git@github.com:arnegiacomo/dotfiles-mac.git ~/dotfiles
-~/dotfiles/scripts/bootstrap-mac.sh     # asks y/n for each step, "a" accepts the rest
-~/dotfiles/scripts/bootstrap-mac.sh -y  # accept everything
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+brew install gh
+gh auth login                                      # GitHub.com, HTTPS, log in with a browser
+gh repo clone arnegiacomo/dotfiles-mac ~/dotfiles  # topgrade's config expects ~/dotfiles
+~/dotfiles/scripts/bootstrap-mac.sh                # asks y/n for each step, "a" accepts the rest
 ```
 
-Installs Homebrew, the `Brewfile` picks and Claude Code, stows the packages, then applies the macOS settings from `scripts/macos-defaults.sh`.
+`bootstrap-mac.sh -y` accepts everything. It installs the `Brewfile` picks and Claude Code, stows the packages, sets up this Mac's SSH key for pushing and commit signing (`scripts/setup-ssh.sh`), then applies the macOS settings from `scripts/macos-defaults.sh`.
+
+When the SSH step adds a new key to `allowed_signers`, commit that change.
 
 ### Stow packages by hand
 

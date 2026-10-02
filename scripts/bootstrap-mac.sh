@@ -48,6 +48,8 @@ for pkg in agents opencode ghostty vscode ssh; do
   if ask "Stow $pkg?"; then stow --no-folding -d "$DOTFILES" -t "$HOME" "$pkg"; fi
 done
 
+if ask "Set up this Mac's SSH key for GitHub?"; then "$DOTFILES/scripts/setup-ssh.sh"; fi
+
 if ask "Apply macOS settings (Dock, Finder, dark mode)?"; then "$DOTFILES/scripts/macos-defaults.sh"; fi
 
 echo "Done. Open a new terminal to load the shell config."
