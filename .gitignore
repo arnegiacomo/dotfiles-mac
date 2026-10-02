@@ -2,3 +2,7 @@
 .DS_Store
 nvim/.config/nvim/plugin/
 nvim/.config/nvim/lazy-lock.json
+
+# Only the ssh config belongs in the repo, never keys
+ssh/.ssh/*
+!ssh/.ssh/config
