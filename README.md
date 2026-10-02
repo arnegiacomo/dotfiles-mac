@@ -10,7 +10,7 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 | `nvim`  | Neovim config (based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)) with LSP for Java, TypeScript/JavaScript |
 | `git`   | Global gitignore |
 | `gh`    | GitHub CLI config |
-| `agents` | Shared global instructions for Claude Code, OpenCode, and Codex CLI |
+| `agents` | Shared global instructions and skills for Claude Code, OpenCode, and Codex CLI. The `hunk-review` skill needs [Hunk](https://hunk.dev) (`brew install hunk`) |
 | `opencode` | OpenCode configuration |
 
 ## Setup
