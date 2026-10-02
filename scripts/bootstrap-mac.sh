@@ -40,12 +40,14 @@ if ! command -v claude >/dev/null && ask "Install Claude Code (native installer)
 fi
 
 echo "==> Stow packages"
-for pkg in zsh nvim git gh starship topgrade-mac; do
+for pkg in zsh nvim git gh starship topgrade; do
   if ask "Stow $pkg?"; then stow -d "$DOTFILES" -t "$HOME" "$pkg"; fi
 done
 # --no-folding links single files, so apps never write caches, or ssh-keygen keys, into the repo
-for pkg in agents opencode ghostty ghostty-mac vscode ssh; do
+for pkg in agents opencode ghostty vscode ssh; do
   if ask "Stow $pkg?"; then stow --no-folding -d "$DOTFILES" -t "$HOME" "$pkg"; fi
 done
+
+if ask "Apply macOS settings (Dock, Finder, dark mode)?"; then "$DOTFILES/scripts/macos-defaults.sh"; fi
 
 echo "Done. Open a new terminal to load the shell config."

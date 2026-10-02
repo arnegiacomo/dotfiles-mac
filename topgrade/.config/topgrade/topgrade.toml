@@ -8,6 +8,3 @@ upgrade = false
 
 [git]
 repos = ["~/dotfiles"]
-
-[commands]
-"Manual binaries (lazygit, lazydocker, nvim)" = "bash ~/dotfiles/scripts/update-bins.sh"

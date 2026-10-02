@@ -99,7 +99,7 @@ eval "$(direnv hook zsh)"
 
 # Node — lazy load via zsh-nvm
 export NVM_LAZY_LOAD=true
-[ -f ~/.zsh-nvm/zsh-nvm.plugin.zsh ] && source ~/.zsh-nvm/zsh-nvm.plugin.zsh
+zinit light lukechilds/zsh-nvm
 
 # Python — lazy-load pyenv
 export PYENV_ROOT="$HOME/.pyenv"
