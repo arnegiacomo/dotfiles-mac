@@ -44,9 +44,12 @@ for pkg in zsh nvim git gh starship topgrade; do
   if ask "Stow $pkg?"; then stow -d "$DOTFILES" -t "$HOME" "$pkg"; fi
 done
 # --no-folding links single files, so apps never write caches, or ssh-keygen keys, into the repo
-for pkg in agents opencode ghostty vscode ssh; do
+for pkg in agents opencode ghostty herdr vscode ssh; do
   if ask "Stow $pkg?"; then stow --no-folding -d "$DOTFILES" -t "$HOME" "$pkg"; fi
 done
+
+# settings.json already holds the hook entry; this writes the hook script it points to
+if command -v herdr >/dev/null && ask "Install herdr's Claude Code hook?"; then herdr integration install claude; fi
 
 if ask "Set up this Mac's SSH key for GitHub?"; then "$DOTFILES/scripts/setup-ssh.sh"; fi
 

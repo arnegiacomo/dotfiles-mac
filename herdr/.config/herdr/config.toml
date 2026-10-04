@@ -1,0 +1,4 @@
+# Full reference: `herdr --default-config` or https://herdr.dev/docs/config-reference/
+
+# Skip first-run setup, it would write back to this file. The bootstrap script installs the Claude Code hook instead.
+onboarding = false
