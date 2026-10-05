@@ -9,3 +9,6 @@ ssh/.ssh/*
 
 # Generated from the installed herdr (`herdr --skill`); topgrade and bootstrap-mac.sh regenerate it
 agents/.agents/skills/herdr/SKILL.md
+
+# Copied from the installed hunk; topgrade and bootstrap-mac.sh refresh it
+agents/.agents/skills/hunk-review/

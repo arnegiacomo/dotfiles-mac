@@ -39,10 +39,15 @@ if ! command -v claude >/dev/null && ask "Install Claude Code (native installer)
   curl -fsSL https://claude.ai/install.sh | bash
 fi
 
-# The herdr skill is generated, not committed, and must exist before agents is stowed; topgrade regenerates it after upgrades
+# The herdr and hunk skills come from the installed tools, not the repo, and must exist before agents is stowed; topgrade refreshes them after upgrades
 if command -v herdr >/dev/null; then
   mkdir -p "$DOTFILES/agents/.agents/skills/herdr"
   herdr --skill > "$DOTFILES/agents/.agents/skills/herdr/SKILL.md"
+fi
+# Copied rather than symlinked, since stow refuses absolute symlinks
+if [[ -d /opt/homebrew/opt/hunk/libexec/skills/hunk-review ]]; then
+  rm -rf "$DOTFILES/agents/.agents/skills/hunk-review"
+  cp -R /opt/homebrew/opt/hunk/libexec/skills/hunk-review "$DOTFILES/agents/.agents/skills/"
 fi
 
 echo "==> Stow packages"

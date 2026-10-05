@@ -9,7 +9,7 @@ My macOS setup - shell, editor, terminal and coding agent config, managed with [
 - `git`, `gh`, `ssh` - git and GitHub CLI config, `~/.ssh/config` (never keys)
 - `agents` - shared instructions and skills for Claude Code, Codex and OpenCode, plus Claude Code settings
 
-`Brewfile` lists the tools, apps and VS Code extensions. The herdr skill is generated from the installed herdr (`herdr --skill`) on bootstrap and after every topgrade run, so it's gitignored.
+`Brewfile` lists the tools, apps and VS Code extensions. The herdr and hunk-review skills come from the installed tools (`herdr --skill`, and a copy of the skill shipped with hunk) on bootstrap and after every topgrade run, so they're gitignored.
 
 ## Setup
 
