@@ -15,6 +15,7 @@ Personal macOS dotfiles managed with [GNU Stow](https://www.gnu.org/software/sto
 | `topgrade` | Topgrade config |
 | `agents` | Shared global instructions and skills for Claude Code, OpenCode, and Codex CLI, plus Claude Code settings. The `hunk-review` skill needs [Hunk](https://hunk.dev) (`brew install hunk`). The `SessionStart` hook comes from `herdr integration install claude`, and the `herdr` skill from `herdr --skill` |
 | `herdr` | [herdr](https://herdr.dev) config |
+| `hunk` | [Hunk](https://hunk.dev) config (Tokyo Night theme) |
 | `opencode` | OpenCode configuration |
 | `vscode` | VS Code user settings |
 | `ssh`   | `~/.ssh/config` (keys are gitignored) |
@@ -43,7 +44,7 @@ When the SSH step adds a new key to `allowed_signers`, commit that change.
 ```bash
 cd ~/dotfiles
 stow zsh nvim git gh starship topgrade
-stow --no-folding agents opencode ghostty herdr vscode ssh
+stow --no-folding agents opencode ghostty herdr hunk vscode ssh
 ```
 
 ## Not included (machine-specific)
