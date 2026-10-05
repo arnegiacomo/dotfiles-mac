@@ -1,30 +1,19 @@
 # dotfiles-mac
+My macOS setup - shell, editor, terminal and coding agent config, managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
-Personal macOS dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
+## What's in it
 
-## What's included
+- `zsh` - `.zshrc`, `.zshenv`, `.zprofile`
+- `nvim` - Neovim, based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+- `ghostty`, `herdr`, `hunk`, `starship`, `topgrade`, `opencode`, `vscode` - config for each
+- `git`, `gh`, `ssh` - git and GitHub CLI config, `~/.ssh/config` (never keys)
+- `agents` - shared instructions and skills for Claude Code, Codex and OpenCode, plus Claude Code settings
 
-| Package | Contents |
-|---------|----------|
-| `zsh`   | `.zshrc`, `.zshenv`, `.zprofile` |
-| `nvim`  | Neovim config (based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)) with LSP for Java, TypeScript/JavaScript |
-| `git`   | Global gitignore |
-| `gh`    | GitHub CLI config |
-| `ghostty` | Ghostty config and keybinds |
-| `starship` | Starship prompt |
-| `topgrade` | Topgrade config |
-| `agents` | Shared global instructions and skills for Claude Code, OpenCode, and Codex CLI, plus Claude Code settings. The `herdr` skill is generated from the installed herdr (`herdr --skill`) by `bootstrap-mac.sh` and after every topgrade run, so it is gitignored. `hunk-review` links to the skill Homebrew installs with Hunk, so `brew upgrade` keeps it current. `hunk-intent-review` runs a multi-repo Hunk review with intent notes, with an optional Herdr tab layout. The `SessionStart` hook comes from `herdr integration install claude` |
-| `herdr` | [herdr](https://herdr.dev) config |
-| `hunk` | [Hunk](https://hunk.dev) config (Tokyo Night theme) |
-| `opencode` | OpenCode configuration |
-| `vscode` | VS Code user settings |
-| `ssh`   | `~/.ssh/config` (keys are gitignored) |
-
-`Brewfile` lists the macOS tools, apps and VS Code extensions.
+`Brewfile` lists the tools, apps and VS Code extensions. The herdr skill is generated from the installed herdr (`herdr --skill`) on bootstrap and after every topgrade run, so it's gitignored.
 
 ## Setup
 
-On a fresh Mac, paste this into Terminal. The repo is private, so the first steps log in to GitHub before cloning.
+On a fresh Mac. The repo is private, so log in to GitHub before cloning:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -35,11 +24,9 @@ gh repo clone arnegiacomo/dotfiles-mac ~/dotfiles  # topgrade's config expects ~
 ~/dotfiles/scripts/bootstrap-mac.sh                # asks y/n for each step, "a" accepts the rest
 ```
 
-`bootstrap-mac.sh -y` accepts everything. It installs the `Brewfile` picks and Claude Code, stows the packages, sets up this Mac's SSH key for pushing and commit signing (`scripts/setup-ssh.sh`), then applies the macOS settings from `scripts/macos-defaults.sh`.
+Installs the `Brewfile` picks and Claude Code, stows the packages, sets up the SSH key for pushing and commit signing, and applies the macOS settings. `-y` accepts everything. If the SSH step adds a key to `allowed_signers`, commit it.
 
-When the SSH step adds a new key to `allowed_signers`, commit that change.
-
-### Stow packages by hand
+Or stow by hand:
 
 ```bash
 cd ~/dotfiles
@@ -47,7 +34,7 @@ stow zsh nvim git gh starship topgrade
 stow --no-folding agents opencode ghostty herdr hunk vscode ssh
 ```
 
-## Not included (machine-specific)
+## Not included
 
-- `~/.secrets` — API tokens, sourced from `.zshenv`
-- `~/.gitconfig` — git user/signing config (OS-specific paths)
+- `~/.secrets` - API tokens, sourced from `.zshenv`
+- `~/.gitconfig.local` - per-machine git overrides, included from the git config
