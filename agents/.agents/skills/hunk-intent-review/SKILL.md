@@ -43,7 +43,7 @@ Tell the user, in three lines: which sessions are open, that they comment inline
 When the user says they have reviewed:
 
 1. For each session, `hunk session comment list --repo <path> --type user --json`.
-2. Save them to the scratchpad as `hunk-review/<repo>.md` (file, line, the code line, the comment) before changing anything. A reload drops notes on files whose content changed, so this file is the record.
+2. Save them to the scratchpad as `hunk-review/<repo>.md` (file, line, the code line, the comment) before changing anything. Line anchors go stale once the code changes, so this file is the record.
 3. Address each comment: change the code, or reply in Hunk with `hunk session comment add --repo <path> --reply-to <note-id> --summary "..."` when you disagree or need input. Leave changes uncommitted.
 4. Report per repo: comments fixed, comments answered, open questions.
 
@@ -51,4 +51,11 @@ Done when every user comment is either fixed or has a reply.
 
 ## 6. Next round
 
-After fixes, `hunk session reload --repo <path> -- diff` for each touched repo, then annotate only the hunks that changed (step 3). Keep the sessions open between rounds; close them only when the user is done.
+After fixes, for each touched repo:
+
+1. Snapshot the notes: `hunk session comment list --repo <path> --type all --json` to the scratchpad.
+2. `hunk session reload --repo <path> -- <same diff command as before>`. A reload keeps every note at its old line number, so notes on changed files end up on the wrong code.
+3. For each file whose content changed, remove its stale agent intent notes by ID with `hunk session comment rm --repo <path> <note-id>`. Avoid `comment clear --file` when the file has agent replies to user comments: it removes those replies too.
+4. Re-annotate those files (step 3): carry over the snapshot's intent notes, re-anchored and updated, plus notes for new hunks.
+
+Keep the sessions open between rounds; close them only when the user is done.
