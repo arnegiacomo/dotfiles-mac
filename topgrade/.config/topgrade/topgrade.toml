@@ -8,3 +8,7 @@ upgrade = false
 
 [git]
 repos = ["~/dotfiles"]
+
+# Regenerate the herdr skill after brew upgrades, so it matches the installed version
+[post_commands]
+"Herdr skill" = "herdr --skill > ~/dotfiles/agents/.agents/skills/herdr/SKILL.md"

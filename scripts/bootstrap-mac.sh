@@ -39,6 +39,12 @@ if ! command -v claude >/dev/null && ask "Install Claude Code (native installer)
   curl -fsSL https://claude.ai/install.sh | bash
 fi
 
+# The herdr skill is generated, not committed, and must exist before agents is stowed; topgrade regenerates it after upgrades
+if command -v herdr >/dev/null; then
+  mkdir -p "$DOTFILES/agents/.agents/skills/herdr"
+  herdr --skill > "$DOTFILES/agents/.agents/skills/herdr/SKILL.md"
+fi
+
 echo "==> Stow packages"
 for pkg in zsh nvim git gh starship topgrade; do
   if ask "Stow $pkg?"; then stow -d "$DOTFILES" -t "$HOME" "$pkg"; fi
