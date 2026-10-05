@@ -2,3 +2,8 @@
 
 # Skip first-run setup, it would write back to this file. The bootstrap script installs the Claude Code hook instead.
 onboarding = false
+
+[keys]
+previous_workspace = "prefix+shift+k"
+next_workspace = "prefix+shift+j"
+switch_workspace = "prefix+shift+1..9"
