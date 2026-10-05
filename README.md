@@ -13,7 +13,7 @@ My macOS setup - shell, editor, terminal and coding agent config, managed with [
 
 ## Setup
 
-On a fresh Mac. The repo is private, so log in to GitHub before cloning:
+On a fresh Mac. The SSH key step uploads the key with `gh`, so log in to GitHub first:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
