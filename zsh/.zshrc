@@ -1,6 +1,3 @@
-export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-export PATH="$PATH:$HOME/.local/bin"
-
 export HOMEBREW_AUTO_UPDATE_SECS=86400
 
 # Docker CLI completions
