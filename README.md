@@ -13,7 +13,7 @@ Personal macOS dotfiles managed with [GNU Stow](https://www.gnu.org/software/sto
 | `ghostty` | Ghostty config and keybinds |
 | `starship` | Starship prompt |
 | `topgrade` | Topgrade config |
-| `agents` | Shared global instructions and skills for Claude Code, OpenCode, and Codex CLI, plus Claude Code settings. The `hunk-review` skill needs [Hunk](https://hunk.dev) (`brew install hunk`). The `SessionStart` hook comes from `herdr integration install claude`, and the `herdr` skill from `herdr --skill` |
+| `agents` | Shared global instructions and skills for Claude Code, OpenCode, and Codex CLI, plus Claude Code settings. The `herdr` and `hunk-review` skills load the reference bundled with the installed tool (`herdr --skill`, `hunk skill path`), so `brew upgrade` keeps them current. `hunk-intent-review` runs a multi-repo Hunk review with intent notes, with an optional Herdr tab layout. The `SessionStart` hook comes from `herdr integration install claude` |
 | `herdr` | [herdr](https://herdr.dev) config |
 | `hunk` | [Hunk](https://hunk.dev) config (Tokyo Night theme) |
 | `opencode` | OpenCode configuration |
