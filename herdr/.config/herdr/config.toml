@@ -10,3 +10,6 @@ switch_workspace = "prefix+shift+1..9"
 
 [ui.toast]
 delivery = "herdr"
+
+[ui.sound]
+enabled = false
