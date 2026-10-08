@@ -27,6 +27,29 @@
           }
         ]
       }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh '/Users/arnegiacomo/.claude/hooks/herdr-desktop-notify.sh'",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "permission_prompt|elicitation_dialog",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh '/Users/arnegiacomo/.claude/hooks/herdr-desktop-notify.sh'",
+            "timeout": 10
+          }
+        ]
+      }
     ]
   }
 }
