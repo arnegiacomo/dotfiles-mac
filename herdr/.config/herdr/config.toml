@@ -9,7 +9,7 @@ next_workspace = "prefix+shift+j"
 switch_workspace = "prefix+shift+1..9"
 
 [ui.toast]
-delivery = "herdr"
+delivery = "terminal"
 
 [ui.sound]
 enabled = false
