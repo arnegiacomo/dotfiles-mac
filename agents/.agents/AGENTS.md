@@ -69,4 +69,3 @@ Preferences, not hard rules - existing codebase conventions take precedence when
 - If no ticket is apparent, ask; omit the ref if there is none
 - Common types: feat, fix, refactor, chore, docs, test
 - Keep commit messages to a subject line unless I ask for a body
-- Don't add AI co-author attribution
