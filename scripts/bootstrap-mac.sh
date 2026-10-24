@@ -39,6 +39,9 @@ if ! command -v claude >/dev/null && ask "Install Claude Code (native installer)
   curl -fsSL https://claude.ai/install.sh | bash
 fi
 
+# Homebrew's rustup ships without a toolchain; topgrade keeps it updated
+if command -v rustup >/dev/null && ask "Install the stable Rust toolchain?"; then rustup default stable; fi
+
 # The herdr and hunk skills come from the installed tools, not the repo, and must exist before agents is stowed; topgrade refreshes them after upgrades
 if command -v herdr >/dev/null; then
   mkdir -p "$DOTFILES/agents/.agents/skills/herdr"

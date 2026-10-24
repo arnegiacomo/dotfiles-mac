@@ -1,5 +1,8 @@
 eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 
+# Homebrew's rustup is keg-only: its bin holds the cargo/rustc proxies, ~/.cargo/bin holds `cargo install` binaries
+export PATH="$HOMEBREW_PREFIX/opt/rustup/bin:$HOME/.cargo/bin:$PATH"
+
 # Created by `pipx` on 2023-09-27 17:50:46
 export PATH="$PATH:$HOME/.local/bin"
 
