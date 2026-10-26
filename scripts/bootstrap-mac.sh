@@ -69,4 +69,6 @@ if ask "Set up this Mac's SSH key for GitHub?"; then "$DOTFILES/scripts/setup-ss
 
 if ask "Apply macOS settings (Dock, Finder, dark mode)?"; then "$DOTFILES/scripts/macos-defaults.sh"; fi
 
+if ask "Use Touch ID for sudo?"; then "$DOTFILES/scripts/setup-touch-id-sudo.sh"; fi
+
 echo "Done. Open a new terminal to load the shell config."

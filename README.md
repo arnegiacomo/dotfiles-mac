@@ -24,7 +24,7 @@ gh repo clone arnegiacomo/dotfiles-mac ~/dotfiles  # topgrade's config expects ~
 ~/dotfiles/scripts/bootstrap-mac.sh                # asks y/n for each step, "a" accepts the rest
 ```
 
-Installs the `Brewfile` picks and Claude Code, stows the packages, sets up the SSH key for pushing and commit signing, and applies the macOS settings. `-y` accepts everything. If the SSH step adds a key to `allowed_signers`, commit it.
+Installs the `Brewfile` picks and Claude Code, stows the packages, sets up the SSH key for pushing and commit signing, applies the macOS settings and turns on Touch ID for sudo. `-y` accepts everything. If the SSH step adds a key to `allowed_signers`, commit it.
 
 Or stow by hand:
 
