@@ -18,6 +18,7 @@ alias ld='lazydocker'
 alias k='kubectl'
 alias ns='kubens'
 alias kx='kubectx'
+alias kxns='kubectx && kubens'
 
 alias gc="git checkout"
 alias gs="git stash"
