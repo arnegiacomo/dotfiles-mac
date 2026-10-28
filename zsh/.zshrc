@@ -15,6 +15,10 @@ alias v='nvim'
 alias lg='lazygit'
 alias ld='lazydocker'
 
+alias k='kubectl'
+alias ns='kubens'
+alias kx='kubectx'
+
 alias gc="git checkout"
 alias gs="git stash"
 alias gpl="git pull"
