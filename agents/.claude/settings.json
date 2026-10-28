@@ -13,6 +13,7 @@
     }
   },
   "promptSuggestionEnabled": false,
+  "idleCompaction": false,
   "tui": "fullscreen",
   "theme": "dark",
   "hooks": {
