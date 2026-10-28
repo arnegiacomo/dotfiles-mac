@@ -1,21 +1,12 @@
 {
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
     "defaultMode": "default"
   },
   "model": "opus",
-  "enabledPlugins": {
-    "mattpocock-skills@claude-plugins-official": true
-  },
-  "effortLevel": "high",
-  "modelSettings": {
-    "claude-opus-5-5": {
-      "effortLevel": "high"
-    }
-  },
-  "promptSuggestionEnabled": false,
-  "idleCompaction": false,
-  "tui": "fullscreen",
-  "theme": "dark",
   "hooks": {
     "SessionStart": [
       {
@@ -30,8 +21,18 @@
       }
     ]
   },
-  "attribution": {
-    "commit": "",
-    "pr": ""
-  }
+  "enabledPlugins": {
+    "mattpocock-skills@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true
+  },
+  "effortLevel": "high",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  },
+  "promptSuggestionEnabled": false,
+  "tui": "fullscreen",
+  "theme": "dark",
+  "idleCompaction": false
 }
