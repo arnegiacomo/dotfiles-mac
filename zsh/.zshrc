@@ -98,6 +98,9 @@ source <(fzf --zsh)
 # Direnv
 eval "$(direnv hook zsh)"
 
+# Sofka completions
+source <(sofka completion zsh)
+
 # Node — lazy load via zsh-nvm
 export NVM_LAZY_LOAD=true
 zinit light lukechilds/zsh-nvm
