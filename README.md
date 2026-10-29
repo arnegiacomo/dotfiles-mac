@@ -34,6 +34,8 @@ stow zsh nvim git gh starship topgrade
 stow --no-folding agents opencode ghostty herdr hunk openlogi vscode ssh
 ```
 
+OpenLogi needs Accessibility and Input Monitoring granted on first launch. Stow it before that first launch, or it writes its own `config.toml` and stow refuses to overwrite it. Its settings are per physical mouse, so a new mouse needs its settings (like scroll inversion) set once in the app, which then saves them to the repo through the symlink.
+
 ## Not included
 
 - `~/.secrets` - API tokens, sourced from `.zshenv`
