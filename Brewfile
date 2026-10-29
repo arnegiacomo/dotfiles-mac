@@ -31,6 +31,7 @@ brew "zoxide"
 
 # Apps
 cask "1password"
+cask "1password-cli"
 cask "alt-tab"
 cask "bruno"
 cask "claude"
