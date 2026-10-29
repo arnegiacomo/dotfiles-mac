@@ -5,7 +5,7 @@ My macOS setup - shell, editor, terminal and coding agent config, managed with [
 
 - `zsh` - `.zshrc`, `.zshenv`, `.zprofile`
 - `nvim` - Neovim, based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
-- `ghostty`, `herdr`, `hunk`, `starship`, `topgrade`, `opencode`, `vscode` - config for each
+- `ghostty`, `herdr`, `hunk`, `openlogi`, `starship`, `topgrade`, `opencode`, `vscode` - config for each
 - `git`, `gh`, `ssh` - git and GitHub CLI config, `~/.ssh/config` (never keys)
 - `agents` - shared instructions and skills for Claude Code, Codex and OpenCode, plus Claude Code settings
 
@@ -31,7 +31,7 @@ Or stow by hand:
 ```bash
 cd ~/dotfiles
 stow zsh nvim git gh starship topgrade
-stow --no-folding agents opencode ghostty herdr hunk vscode ssh
+stow --no-folding agents opencode ghostty herdr hunk openlogi vscode ssh
 ```
 
 ## Not included
