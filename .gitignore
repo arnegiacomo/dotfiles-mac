@@ -12,3 +12,6 @@ agents/.agents/skills/herdr/SKILL.md
 
 # Copied from the installed hunk; topgrade and bootstrap-mac.sh refresh it
 agents/.agents/skills/hunk-review/
+
+# Login state that gh auth login writes itself
+gh/.config/gh/hosts.yml
