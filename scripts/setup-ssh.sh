@@ -12,14 +12,19 @@ if [[ ! -f "$KEY" ]]; then
   ssh-add --apple-use-keychain "$KEY"
 fi
 
-# Uploading signing keys needs a scope gh doesn't ask for at login
-gh auth refresh -h github.com -s admin:public_key,admin:ssh_signing_key
+key="$(cut -d' ' -f1,2 "$KEY.pub")"
 title="$(scutil --get ComputerName)"
-gh ssh-key add "$KEY.pub" --title "$title" --type authentication || echo "Key already on GitHub for pushing."
-gh ssh-key add "$KEY.pub" --title "$title" --type signing || echo "Key already on GitHub for signing."
+
+# Listing and adding both key types needs the scopes requested at gh auth login (see README)
+github_keys="$(gh ssh-key list)"
+for type in authentication signing; do
+  # Each line ends with the key's type
+  if ! awk -v k="$key" -v t="$type" 'index($0, k) && $NF == t {found = 1} END {exit !found}' <<<"$github_keys"; then
+    gh ssh-key add "$KEY.pub" --title "$title" --type "$type"
+  fi
+done
 
 # Lets git verify commits signed on this Mac
-key="$(cut -d' ' -f1,2 "$KEY.pub")"
 if ! grep -qF "$key" "$SIGNERS"; then
   echo "$EMAIL $key" >>"$SIGNERS"
   echo "Added this key to allowed_signers. Commit that change in $DOTFILES."

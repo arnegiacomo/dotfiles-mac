@@ -19,9 +19,9 @@ On a fresh Mac. The SSH key step uploads the key with `gh`, so log in to GitHub 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 brew install gh
-gh auth login                                      # GitHub.com, HTTPS, log in with a browser
-gh repo clone arnegiacomo/dotfiles-mac ~/dotfiles  # topgrade's config expects ~/dotfiles
-~/dotfiles/scripts/bootstrap-mac.sh                # asks y/n for each step, "a" accepts the rest
+gh auth login -s admin:public_key,admin:ssh_signing_key  # GitHub.com, HTTPS, log in with a browser
+gh repo clone arnegiacomo/dotfiles-mac ~/dotfiles        # topgrade's config expects ~/dotfiles
+~/dotfiles/scripts/bootstrap-mac.sh                      # asks y/n for each step, "a" accepts the rest
 ```
 
 Installs the `Brewfile` and Claude Code, stows the packages, sets up the SSH key for pushing and commit signing, applies the macOS settings and turns on Touch ID for sudo. `-y` accepts everything. If the SSH step adds a key to `allowed_signers`, commit it.
