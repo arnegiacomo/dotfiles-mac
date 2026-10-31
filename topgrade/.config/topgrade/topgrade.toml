@@ -9,7 +9,8 @@ upgrade = false
 [git]
 repos = ["~/dotfiles"]
 
-# Refresh the herdr and hunk skills after brew upgrades, so they match the installed versions
+# Refresh the herdr and hunk skills after brew upgrades, so they match the installed versions.
+# The hunk skill is restowed, since its files are linked one by one and can be added or removed.
 [post_commands]
 "Herdr skill" = "herdr --skill > ~/dotfiles/agents/.agents/skills/herdr/SKILL.md"
-"Hunk skill" = "rm -rf ~/dotfiles/agents/.agents/skills/hunk-review && cp -R /opt/homebrew/opt/hunk/libexec/skills/hunk-review ~/dotfiles/agents/.agents/skills/"
+"Hunk skill" = "rm -rf ~/dotfiles/agents/.agents/skills/hunk-review && cp -R /opt/homebrew/opt/hunk/libexec/skills/hunk-review ~/dotfiles/agents/.agents/skills/ && stow -R --no-folding -d ~/dotfiles -t ~ agents"
