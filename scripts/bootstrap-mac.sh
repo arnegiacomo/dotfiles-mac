@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Sets up a new Mac from these dotfiles. Asks before every install and stow; pass -y to accept everything.
+# Sets up a new Mac from these dotfiles. Asks before each step; pass -y to accept everything.
 set -euo pipefail
 
 DOTFILES="$(cd "$(dirname "$0")/.." && pwd)"
@@ -7,12 +7,11 @@ accept_all=false
 [[ "${1:-}" == "-y" ]] && accept_all=true
 
 # y/n prompt; "a" accepts this and every later prompt.
-# Reads from /dev/tty because stdin is taken by the Brewfile loop.
 ask() {
   $accept_all && return 0
   local reply
   while true; do
-    read -rp "$1 [y/n/a] " reply </dev/tty
+    read -rp "$1 [y/n/a] " reply
     case "$reply" in
       y) return 0 ;;
       n) return 1 ;;
@@ -27,12 +26,9 @@ if ! command -v brew >/dev/null; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-echo "==> Brewfile"
-picked="$(mktemp)"
-while IFS= read -r line; do
-  if ask "$line"; then echo "$line" >>"$picked"; fi
-done < <(grep -E '^(tap|brew|cask|mas|vscode) ' "$DOTFILES/Brewfile")
-brew bundle --file "$picked" || echo "Some installs failed, see above."
+if ask "Install the Brewfile?"; then
+  brew bundle --file "$DOTFILES/Brewfile" || echo "Some installs failed, see above."
+fi
 
 # Native installer instead of the cask, since it keeps itself updated
 if ! command -v claude >/dev/null && ask "Install Claude Code (native installer)?"; then
@@ -54,12 +50,13 @@ if [[ -d /opt/homebrew/opt/hunk/libexec/skills/hunk-review ]]; then
 fi
 
 echo "==> Stow packages"
+# -R restows, removing links to files that are no longer in the repo
 for pkg in zsh nvim git gh starship topgrade; do
-  if ask "Stow $pkg?"; then stow -d "$DOTFILES" -t "$HOME" "$pkg"; fi
+  if ask "Stow $pkg?"; then stow -R -d "$DOTFILES" -t "$HOME" "$pkg" || echo "Couldn't stow $pkg, see above."; fi
 done
 # --no-folding links single files, so apps never write caches, or ssh-keygen keys, into the repo
 for pkg in agents opencode ghostty herdr hunk openlogi vscode ssh; do
-  if ask "Stow $pkg?"; then stow --no-folding -d "$DOTFILES" -t "$HOME" "$pkg"; fi
+  if ask "Stow $pkg?"; then stow -R --no-folding -d "$DOTFILES" -t "$HOME" "$pkg" || echo "Couldn't stow $pkg, see above."; fi
 done
 
 # settings.json already holds the hook entry; this writes the hook script it points to
