@@ -1,6 +1,11 @@
 [misc]
 assume_yes = false
 cleanup = true
+# Projects pull their own images; pulling every local image fails for local builds
+disable = ["containers"]
+
+[brew]
+autoremove = true
 
 [firmware]
 upgrade = false
