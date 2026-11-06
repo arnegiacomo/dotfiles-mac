@@ -5,7 +5,7 @@ My macOS setup - shell, editor, terminal and coding agent config, managed with [
 
 - `zsh` - `.zshrc`, `.zshenv`, `.zprofile`
 - `nvim` - Neovim, based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
-- `ghostty`, `herdr`, `hunk`, `openlogi`, `starship`, `topgrade`, `opencode`, `vscode` - config for each
+- `ghostty`, `herdr`, `hunk`, `openlogi`, `rex`, `starship`, `topgrade`, `opencode`, `vscode` - config for each
 - `git`, `gh`, `ssh` - git and GitHub CLI config, `~/.ssh/config` (never keys)
 - `agents` - shared instructions and skills for Claude Code, Codex and OpenCode, plus Claude Code settings
 
@@ -31,7 +31,7 @@ Or stow by hand:
 ```bash
 cd ~/dotfiles
 stow zsh nvim git gh starship topgrade
-stow --no-folding agents opencode ghostty herdr hunk openlogi vscode ssh
+stow --no-folding agents opencode ghostty herdr hunk openlogi rex vscode ssh
 ```
 
 OpenLogi needs Accessibility and Input Monitoring granted on first launch. Stow it before that first launch, or it writes its own `config.toml` and stow refuses to overwrite it. Its settings are per physical mouse, so a new mouse needs its settings (like scroll inversion) set once in the app, which then saves them to the repo through the symlink.
