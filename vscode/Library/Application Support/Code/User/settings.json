@@ -1,4 +1,21 @@
 {
     "chat.disableAIFeatures": true,
-    "explorer.confirmDelete": false
+    "telemetry.telemetryLevel": "off",
+    "workbench.enableExperiments": false,
+    "workbench.startupEditor": "none",
+    "explorer.confirmDelete": false,
+    "files.watcherExclude": {
+        "**/target/**": true,
+        "**/build/**": true,
+        "**/dist/**": true,
+        "**/.gradle/**": true,
+        "**/.venv/**": true
+    },
+    "search.exclude": {
+        "**/target": true,
+        "**/build": true,
+        "**/dist": true,
+        "**/.gradle": true,
+        "**/.venv": true
+    }
 }
