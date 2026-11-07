@@ -55,7 +55,6 @@ cask "tailscale-app"
 cask "visual-studio-code"
 
 # VS Code extensions
-vscode "anthropic.claude-code"
 vscode "cweijan.vscode-database-client2"
 vscode "dbaeumer.vscode-eslint"
 vscode "github.vscode-github-actions"
