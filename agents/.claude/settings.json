@@ -34,5 +34,6 @@
   "promptSuggestionEnabled": false,
   "tui": "fullscreen",
   "theme": "dark",
-  "idleCompaction": false
+  "idleCompaction": false,
+  "switchModelsOnFlag": true
 }
