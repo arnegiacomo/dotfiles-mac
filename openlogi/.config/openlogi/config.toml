@@ -72,9 +72,79 @@ pointer_scaling = false
 force_sensing = false
 disable_keys = false
 
+[devices."unit:fa99135a".identity]
+display_name = "MX Vertical"
+codename = "MX Vertical Advanced Ergonomic Mouse"
+kind = "mouse"
+
 [keyboard]
 
 [devices."unit:5d9ee340".links."receiver:22ef9bb3:slot:1".capabilities]
+buttons = true
+pointer = true
+lighting = false
+scroll_inversion = false
+hires_wheel = false
+thumbwheel = false
+haptic_feedback = false
+haptic_panel = false
+dpi_gestures = true
+fn_lock = false
+os_layout = false
+report_rate = false
+backlight = false
+easy_switch = true
+virtual_thumbwheel = false
+pointer_scaling = false
+force_sensing = false
+disable_keys = false
+
+[devices."unit:fa99135a"]
+dpi = 4000
+invert_scroll = true
+
+[devices."unit:fa99135a".identity.model_info]
+entity_count = 3
+unit_id = [
+    0,
+    0,
+    0,
+    0,
+]
+model_ids = [
+    45088,
+    16507,
+    49290,
+]
+extended_model_id = 0
+
+[devices."unit:fa99135a".identity.model_info.transports]
+usb = true
+equad = true
+btle = true
+bluetooth = false
+
+[devices."unit:fa99135a".identity.capabilities]
+buttons = true
+pointer = true
+lighting = false
+scroll_inversion = false
+hires_wheel = false
+thumbwheel = false
+haptic_feedback = false
+haptic_panel = false
+dpi_gestures = true
+fn_lock = false
+os_layout = false
+report_rate = false
+backlight = false
+easy_switch = true
+virtual_thumbwheel = false
+pointer_scaling = false
+force_sensing = false
+disable_keys = false
+
+[devices."unit:fa99135a".links."receiver:a5b09c17:slot:1".capabilities]
 buttons = true
 pointer = true
 lighting = false
