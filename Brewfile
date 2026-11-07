@@ -53,6 +53,7 @@ cask "spotify"
 cask "steam"
 cask "tailscale-app"
 cask "visual-studio-code"
+cask "zed"
 
 # VS Code extensions
 vscode "cweijan.vscode-database-client2"

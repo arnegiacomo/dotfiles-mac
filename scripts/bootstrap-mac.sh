@@ -55,7 +55,7 @@ for pkg in zsh nvim git gh starship topgrade; do
   if ask "Stow $pkg?"; then stow -R -d "$DOTFILES" -t "$HOME" "$pkg" || echo "Couldn't stow $pkg, see above."; fi
 done
 # --no-folding links single files, so apps never write caches, or ssh-keygen keys, into the repo
-for pkg in agents opencode ghostty herdr hunk openlogi rex vscode ssh; do
+for pkg in agents opencode ghostty herdr hunk openlogi rex vscode zed ssh; do
   if ask "Stow $pkg?"; then stow -R --no-folding -d "$DOTFILES" -t "$HOME" "$pkg" || echo "Couldn't stow $pkg, see above."; fi
 done
 
