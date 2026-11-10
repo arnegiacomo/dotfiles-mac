@@ -19,4 +19,7 @@ defaults write NSGlobalDomain AppleInterfaceStyle -string Dark
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false
 
+# VS Code: holding a key repeats it (for vim motions) instead of showing the accent popup
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
 killall Dock Finder

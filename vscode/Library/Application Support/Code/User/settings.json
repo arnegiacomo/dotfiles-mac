@@ -1,5 +1,6 @@
 {
     "chat.disableAIFeatures": true,
+    "vim.disableExtension": true,
     "telemetry.telemetryLevel": "off",
     "workbench.enableExperiments": false,
     "workbench.startupEditor": "none",
