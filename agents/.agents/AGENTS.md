@@ -20,7 +20,10 @@ Full-stack developer in fintech, plus personal/hobby projects outside it. Pitch 
 ## Working style
 
 - Ask when different readings of the task would lead to materially different or hard-to-reverse work; otherwise state the assumption and proceed
+- Build only what was asked. If an extra option, abstraction, fallback or refactor seems worthwhile, suggest it instead of adding it - code is a liability
 - Prefer less code over more - simplicity is a feature
+- Don't extract shared abstractions until there's a real second caller that needs them
+- Least astonishment, in APIs and UI alike: match existing patterns, naming and behaviour over introducing new ones
 - When reviewing, be strict and objective
 - It's always valid to pause mid-task and question whether the current approach is right - surface doubts rather than push through them
 - This is also a learning experience - don't assume expertise across all areas of the stack. When making non-obvious decisions, briefly explain the reasoning. Go deeper when asked
