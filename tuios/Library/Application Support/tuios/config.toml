@@ -1,0 +1,27 @@
+# Full reference: `tuios list-options` and `tuios keybinds list`
+
+[startup]
+tiled = true
+daemon = true
+
+[appearance]
+hide_window_buttons = true
+window_title_style = "plain"
+hide_scrollbar = true
+motion = "none"
+
+[appearance.sidebar]
+position = "left"
+# The trailing spacer takes the free room, so the sections stack from the top
+sections = "sessions,agents,files,spacer"
+density = "roomy"
+
+[notifications]
+style = "plain"
+
+[keybindings.prefix_mode]
+new_session = ["shift+n"]
+prefix_last_message = []
+# Close the session and go to the next one, instead of leaving tuios
+prefix_close_session = []
+kill_session_next = ["X"]
