@@ -5,12 +5,14 @@ tiled = true
 daemon = true
 
 [appearance]
+theme = "tokyonight"
 hide_window_buttons = true
 window_title_style = "plain"
 hide_scrollbar = true
 motion = "none"
 border_focused_color = "white"
 border_unfocused_color = "bright_black"
+session_colors = false
 dock_workspace_tab_format = "{index} {name}"
 
 [appearance.sidebar]
