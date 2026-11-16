@@ -25,3 +25,6 @@ prefix_last_message = []
 # Close the session and go to the next one, instead of leaving tuios
 prefix_close_session = []
 kill_session_next = ["X"]
+
+[spotlight]
+enabled = false
