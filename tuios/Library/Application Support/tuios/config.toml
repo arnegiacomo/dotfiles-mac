@@ -9,12 +9,15 @@ hide_window_buttons = true
 window_title_style = "plain"
 hide_scrollbar = true
 motion = "none"
+dock_workspace_tab_format = "{index} {name}"
 
 [appearance.sidebar]
 position = "left"
 # The trailing spacer takes the free room, so the sections stack from the top
 sections = "sessions,agents,files,spacer"
 density = "roomy"
+show_numbers = true
+show_counts = false
 
 [notifications]
 style = "plain"
