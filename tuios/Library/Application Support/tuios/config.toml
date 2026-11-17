@@ -33,6 +33,7 @@ style = "plain"
 
 [keybindings.prefix_mode]
 new_session = ["shift+n"]
+new_workspace = ["n"]
 prefix_last_message = []
 # Close the session and go to the next one, instead of leaving tuios
 prefix_close_session = []
