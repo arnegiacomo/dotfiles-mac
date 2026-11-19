@@ -11,3 +11,6 @@ rex.bind("ctrl+b>ctrl+b", "pane.send_key", { key = "ctrl+b" })
 rex.bind("alt+backspace", "com.superlogical.terminal.write", { data = "\27\127" })
 rex.bind("alt+left", "com.superlogical.terminal.write", { data = "\27b" })
 rex.bind("alt+right", "com.superlogical.terminal.write", { data = "\27f" })
+
+-- Show or hide the Rex window
+rex.bind("shift+cmd+r", "client.visibility.toggle")
