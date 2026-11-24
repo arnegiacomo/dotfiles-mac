@@ -16,6 +16,7 @@ Done when every repo has a diff command and each diff is non-empty (`git status 
 ## 2. Open sessions
 
 - Inside Herdr (`HERDR_ENV=1`): follow [HERDR.md](HERDR.md).
+- Inside tuios (`TUIOS_ENV=1`): follow [TUIOS.md](TUIOS.md).
 - Otherwise: ask the user to run `hunk diff` in each repo, then poll `hunk session list` until every repo appears.
 
 Done when `hunk session list` shows one session per repo.
