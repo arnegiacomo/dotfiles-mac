@@ -1,6 +1,6 @@
 # tuios layout for hunk-intent-review
 
-Use the tuios CLI (see the `tuios` skill) to give each repo its own workspace in the caller's session. A workspace is tuios' tab, and Hunk gets the full width there.
+Use the tuios CLI (`tuios --skill` prints its agent guide) to give each repo its own workspace in the caller's session. A workspace is tuios' tab, and Hunk gets the full width there.
 
 Per repo:
 
