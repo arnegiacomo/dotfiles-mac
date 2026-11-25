@@ -6,6 +6,8 @@ disable = ["containers"]
 
 [brew]
 autoremove = true
+# Most GUI casks update themselves, and brew skips those unless told otherwise
+greedy_auto_updates = true
 
 [firmware]
 upgrade = false
