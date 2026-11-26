@@ -54,6 +54,7 @@ cask "rectangle"
 cask "spotify"
 cask "steam"
 cask "tailscale-app"
+cask "terminal-browser"
 cask "visual-studio-code"
 cask "zed"
 
